@@ -18,4 +18,4 @@ response = r.json()
 
 
 #print(response['Message'])
-print(HEADERS)
+print(response)
