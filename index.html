@@ -80,6 +80,8 @@
 
                 $.ajax({
                     url: "https://www.bungie.net/Platform/GlobalAlerts/",
+                    cache: true,
+                    timeout: 60000,
                     headers: {
                         "X-API-Key": apiKey
                     }
