@@ -78,6 +78,7 @@
                 var apiKey = "5ad0146890494c009922605caa82985d";
                 var element = document.getElementById("id1");
 
+                function GET (){
                 $.ajax({
                     url: "https://www.bungie.net/Platform/GlobalAlerts/",
                     cache: true,
@@ -92,7 +93,10 @@
                             else {element.innerHTML = json.Message};
                 });
                
-        
+                }
+                GET();
+                setInterval(GET, 60 * 1000);
+
                 
 
             </script>
