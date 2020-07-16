@@ -41,6 +41,12 @@
         min-height: 100%;
     }
 
+     /* First image (Logo. Full height) */
+     .bgimg-2 {
+        background-image: url('https://www.bungie.net/7/ca/destiny/products/beyondlight/media_wallpaper_3.png');
+        min-height: 100%;
+    }
+
     .w3-wide {
         letter-spacing: 10px;
     }
@@ -68,7 +74,7 @@
 
 
     <!-- First Parallax Image with Logo Text -->
-    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+    <div id="idB" class=" bgimg-1 w3-display-container w3-opacity-min" id="home">
         <div class="w3-display-middle" style="white-space:nowrap;">
             <span id="id1" class="w3-center w3-padding-large w3-xlarge w3-wide w3-animate-opacity">DESTINY2 ONLINE CHECKER</span>
             
@@ -84,13 +90,13 @@
                 function offline () {
                     document.getElementById("id1").innerHTML = 'DESTINY2 IS OFFLINE'
                     document.getElementById("id1").classList.add('w3-red')
+                    document.getElementById("idB").classList.add('bgimg-2')
                 }
 
                 function GET (){
                 $.ajax({
                     url: "https://www.bungie.net/Platform/GlobalAlerts/",
                     cache: true,
-                    timeout: 60000,
                     headers: {
                         "X-API-Key": apiKey
                     }
@@ -103,7 +109,8 @@
                
                 }
                 GET();
-                setInterval(GET, 60 * 1000);
+                setTimeout(GET, 60 * 1000);
+                setInterval(GET, 60 * 1001);
             </script>
              
              
