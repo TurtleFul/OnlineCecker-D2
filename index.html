@@ -71,12 +71,21 @@
     <!-- First Parallax Image with Logo Text -->
     <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
         <div class="w3-display-middle" style="white-space:nowrap;">
-            <span id="id1" class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">DESTINY2 ONLINE CHECKER</span>
+            <span id="id1" class="w3-center w3-padding-large w3-xlarge w3-wide w3-animate-opacity">DESTINY2 ONLINE CHECKER</span>
             
             <script>
 
                 var apiKey = "5ad0146890494c009922605caa82985d";
-                var element = document.getElementById("id1");
+
+                function online () {
+                    document.getElementById("id1").innerHTML = 'DESTINY2 IS ONLINE'
+                    document.getElementById("id1").classList.add('w3-green')
+                }
+
+                function offline () {
+                    document.getElementById("id1").innerHTML = 'DESTINY2 IS OFFLINE'
+                    document.getElementById("id1").classList.add('w3-red')
+                }
 
                 function GET (){
                 $.ajax({
@@ -89,17 +98,15 @@
                 }).done(function (json) {
                     console.log(json.Message); 
                         if (json.Message == 'Ok'){
-                            element.innerHTML = 'DESTINY2 IS ONLINE'}
-                            else {element.innerHTML = json.Message};
+                            online();}
+                            else {offline()};
                 });
                
                 }
                 GET();
                 setInterval(GET, 60 * 1000);
-
-                
-
             </script>
+             
              
 
         </div>
