@@ -1,3 +1,6 @@
 vars.py
 vars.js
 .env
+api.py
+.vscode
+.__pychache__

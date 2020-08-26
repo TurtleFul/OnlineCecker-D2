@@ -77,48 +77,11 @@
 
     <!-- First Parallax Image with Logo Text -->
     <div id="idB" class=" bgimg-1  w3-opacity-min" id="home">
+        <div id="ids" class="w3-display-top-left">Current Season: </div>
         <div class="w3-display-middle inline-block style="white-space:nowrap;">
             <div id="id1" class="w3-center w3-padding-large w3-xlarge w3-wide w3-animate-opacity ">DESTINY2 ONLINE CHECKER</div>            
             
-            <script>
-
-                var theNumbersMason = "aa82985d";       
-                var whatDoTheyMean = "90494c00";        
-                var whatAreTheseNumbers = "9922605c"    
-                var andWhatDoTheyMean = "5ad01468";     
-
-                var randomNumbers = andWhatDoTheyMean + whatDoTheyMean + whatAreTheseNumbers + theNumbersMason;
-
-                function online () {
-                    document.getElementById("id1").innerHTML = 'DESTINY2 IS ONLINE'
-                    document.getElementById("id1").classList.add('w3-green')
-                }
-
-                function offline () {
-                    document.getElementById("id1").innerHTML = 'DESTINY2 IS OFFLINE'
-                    document.getElementById("id1").classList.add('w3-red')
-                    document.getElementById("idB").classList.add('bgimg-2')
-                }
-
-                function GET (){
-                $.ajax({
-                    url: "https://www.bungie.net/Platform/GlobalAlerts/",
-                    cache: true,
-                    headers: {
-                        "X-API-Key": randomNumbers
-                    }
-                }).done(function (json) {
-                    console.log(json.Message); 
-                        if (json.Message == 'Ok'){
-                            online();}
-                            else {offline()};
-                });
-               
-                }
-                GET();
-                setTimeout(GET, 60 * 1000);
-                setInterval(GET, 60 * 1001);
-            </script>
+            <script src="api.js"></script>
              
              
 
